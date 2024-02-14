@@ -2,8 +2,8 @@
 An open and standardized way to name and identify your devices like network equipment, network tools, hypervisors, looking glasses and PTRs.
 
 ## Introduction
-Always struggle with naming your routers, switches and looking glasses? Standardize them now using this easy to use naming convention. The goal of this standard is to be a go-to set of rules which can be applied for your network deployment, allowing you not to worry about ending up inconsistent. It also offers all people involved, including customers to have some useful hostnames for example.
-Remember that everything is optional and you are free to fork it and customize it to your likings.
+Always struggling with naming your routers, switches and looking glasses? Standardize them now using this easy-to-use naming convention. The goal of this standard is to be a go-to set of rules that can be applied for your network deployment, allowing you not to worry about ending up inconsistent. It also offers all people involved, including customers to have some useful hostnames for example.
+Remember that everything is optional and you are free to fork it and customize it to your liking.
 
 ## Changelog
 | Version | Changes          |
@@ -12,7 +12,7 @@ Remember that everything is optional and you are free to fork it and customize i
 
 ## Syntax
 ### Devices
-The general syntax for equipment like routers, switches and servers are as follows:
+The general syntax for equipment like routers, switches and servers is as follows:
 
 ```
 [FACILITY]-{CITY}-{COUNTRY}-{NAME}
