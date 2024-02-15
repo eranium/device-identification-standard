@@ -3,7 +3,7 @@ An open and standardized way to name and identify your devices like network equi
 
 ## Introduction
 Always struggling with naming your routers, switches and looking glasses? Standardize them now using this easy-to-use naming convention. The goal of this standard is to be a go-to set of rules that can be applied for your network deployment, allowing you not to worry about ending up inconsistent. It also offers all people involved, including customers to have some useful hostnames for example.
-Remember that everything is optional and you are free to fork it and customize it to your liking.
+Remember that everything is optional and you are free to fork it and customize it to your liking. We recommend you to not use `.` in hostnames, as they are trimmed when you log in into a server/switch like: `[root@edge1 ~]#`.
 
 ## Changelog
 | Version | Changes          |
@@ -15,24 +15,24 @@ Remember that everything is optional and you are free to fork it and customize i
 The general syntax for equipment like routers, switches and servers is as follows:
 
 ```
-[FACILITY]-{CITY}-{COUNTRY}-{NAME}
+{NAME}-[FACILITY]-{CITY}-{COUNTRY}
 ```
 
 |     Tag      | Required | Description                                                                                                                               |
 |:------------:|----------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| `[FACILITY]` | Optional | Short name for facility. Could be useful for networks with several point-of-presences in a metro to have a distinction between facilities. |   |   |
+| `[FACILITY]` | Optional | Short name for facility. Could be useful for networks with several point-of-presences in a metro to have a distinction between facilities. |
+|`{NAME}`|✅| Name for the devices, like router, switch, edge, but it may also be a name for a specific device. Usually includes a number as well.      |
 |`{CITY}`|✅| Code based on UN/LOCODE, more about this [below](#codes).                                                               |
 |`{COUNTRY}`|✅| Code based on the well-known ISO 3166-1-alpha-2 standard, this is also a part of the UN/LOCODE.                                           |
-|`{NAME}`|✅| Name for the devices, like router, switch, edge, but it may also be a name for a specific device. Usually includes a number as well.      |
 
 *Examples*:
-`ams-nl-edge1`, `doi-nl-core2`, `rom-it-colosseum`, `che-ua-reactor` or with the optional facility tag: `imdc-haa-nl-edge2`
+`edge1-ams-nl`, `core2-doi-nl`, `colosseum-rom-it`, `reactor-che-ua` or with the optional facility tag: `edge2-imdc-haa-nl`
 
 ### Hostnames
 Of course, most of these devices must have a hostname as well, which may be shown in traceroutes as hops. It's based on the Devices syntax, but with an additional hostname and optionally an interface tag:
 
 ```
-[CIRCUIT].[INTERFACE].[FACILITY]-{CITY}-{COUNTRY}-{NAME}.{DOMAIN}.{TLD}
+[CIRCUIT].[INTERFACE].{NAME}-[FACILITY]-{CITY}-{COUNTRY}.{DOMAIN}.{TLD}
 ```
 
 |      Tag      | Required | Description                                                             |
@@ -51,7 +51,7 @@ Of course, most of these devices must have a hostname as well, which may be show
 | `lag#`  | Vendor agnostic lag/port channel. |
 | `vlan#` | VLAN interfaces.                  |
 
-*Example*: `ams-nl-edge1.as123123.net`, or with interface `vlan1337.ams-nl-edge1.as123123.net`, or with the whole shebang `cust9.vlan1337.ams-nl-edge1.as123123.net`
+*Example*: `edge1-ams-nl.as123123.net`, or with interface `vlan1337.edge1-ams-nl.as123123.net`, or with the whole shebang `cust9.vlan1337.edge1-ams-nl.as123123.net`
 
 ### TXT
 For network operators with a lot of point-of-presences, it may be useful to offer TXT responses on hostnames showing the location more extensively including geo-location data. We have a little scheme for this as well:
