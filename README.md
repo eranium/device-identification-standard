@@ -97,7 +97,7 @@ In our experience (maintaining a popular [Looking Glass](https://github.com/hybu
 LG-{CITY}-{COUNTRY}.{DOMAIN}.{TLD}
 ```
 
-*Example*: Assume a looking glass for a network in Amsterdam, this would end up like: `lg-nl-ams.as123123.net`.
+*Example*: Assume a looking glass for a network in Amsterdam, this would end up like: `lg-ams-nl.as123123.net`.
 
 Please note that this hostname must point towards an IP within your network, do not put a looking glass behind a reverse proxy like Cloudflare (yes this happens!).
 
